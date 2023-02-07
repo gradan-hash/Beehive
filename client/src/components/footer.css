@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500&display=swap');
+
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: 'Roboto Slab', serif;
+}
+
+.row-main{
+
+    /* display:flex;
+    flex-direction: row; */
+    width:100%;
+    background-color: #ffc72b;
+    color:black;
+    /* justify-content: space-between; */
+    position:relative;
+    bottom:0;
+    padding:3rem;
+    margin-top: 4px;
+}
+
+.header p{
+
+    text-align: center;
+    font-size: 23px;
+    font-weight: 300;
+}
+
+.contact{
+
+    display:flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+}
+
+.contact .reach{
+
+    margin-top: 20px;
+    font-size: 22px;
+    width: 60%;
+    cursor: pointer;
+}
+
+.contact .location{
+
+    font-size: 22px;
+    margin-top: 20px;
+}
+
+.copy .col-p{
+    margin-top: 10px;
+    text-align: center;
+}
+
+
+.whatsapp{
+    font-size: 17px;
+    font-weight: 500;
+    height:5rem;
+    width:6rem;
+    border-radius: 6rem;
+    cursor: pointer;
+    transition:background-color 1s ease-in-out 1.5ms;
+}
+
+.whatsapp:hover{
+
+    background-color:#ffc72b
+}

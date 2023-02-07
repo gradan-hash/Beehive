@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500&display=swap');
+
+*{
+
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: 'Roboto Slab', serif;
+}
+
+.main{
+
+    height:100vh;
+    width:100%;
+    background:url('./hansjorg-keller-puMOiZaaxWI-unsplash.jpg');
+    background-size: cover;
+    border-radius: 10px;
+    opacity:0.9;
+    background-repeat: no-repeat;
+     background-color: transparent; 
+
+ }
+
+.main .title{
+
+    text-align: center;
+    font-size: 26px;
+    /* margin-top: 60px; */
+
+
+} 
+
+.title #name{
+    font-size: 28px;
+    font-weight: bold;
+}
