@@ -89,12 +89,12 @@ import axios from "axios";
 import { buildingRoute } from "../../../api/api";
 
 const New = ({ inputs, title }) => {
-  const [files, setFiles] = useState("");
-  const [loadingUpload, setLoadingUpload] = useState(false);
-  const [loading, setLoading] = useState(false);
+  // const [files, setFiles] = useState("");     storing selected image files
+  // const [loadingUpload, setLoadingUpload] = useState(false); for storing the upload status of the images
+  // const [loading, setLoading] = useState(false); storing the status of the form submission,
   const [building, setBuilding] = useState({
     apartmentName: "",
-    location: "",
+    // location: "",           storing the building information entered into the form.
     price: "",
     purpose: "",
     description: "",
@@ -102,6 +102,11 @@ const New = ({ inputs, title }) => {
     category: "",
     img: "",
   });
+
+
+
+
+  // changeHandler  function updates the building state variable based on user input in the form. If the input is an image file, it uploads the image to a cloud service (Cloudinary) using axios and stores the returned image URL in the building state. If the input is a text field, it updates the corresponding field in the building state
 
   const changeHandler = async (e) => {
     if (e.target.name === "file") {
@@ -143,7 +148,10 @@ const New = ({ inputs, title }) => {
   };
 
 
-  
+
+  // The handleSubmit function sends a POST request to the API endpoint to create a new building with the information stored in the building state. The function validates the form inputs and displays an error message if any required field is missing. The function also sets the loading state to true while the API request is in progress.
+
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 

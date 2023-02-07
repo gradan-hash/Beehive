@@ -8,37 +8,111 @@ function Dashboard(){
 
 
     const [image, setImage] = useState('')
+    const [imageloadupload, setImageLoadUpload] = useState(false)
+    const [loading, setLoading] = useState(false)
+    const [hive, setHive] = useState({
+
+        name:'',
+        price:'' ,
+        size:'',
+        image:''
+    })
 
     
         
-        const uploadImage =()=>{
+        const uploadImage = async (e)=>{
+
+        if(e.target.name === 'image'){
+
+            setImage(e.target.files[0])
+        
 
         try{
     
+            setImageLoadUpload(true)
             const formData = new FormData()
             formData.append('file', image)
             formData.append('upload_preset', 'tm4havmt')
 
+
             // console.log(files[0])
-    
-            Axios.post('https://api.cloudinary.com/v1_1/djgk2k4sw/image/upload', formData).then((response)=>{
-                console.log(response)
-            })
-        
-    
 
+            
+            // Axios.post('https://api.cloudinary.com/v1_1/djgk2k4sw/image/upload', formData).then((response)=>{
+                //     console.log(response)
+            // })
+
+            const response = await Axios.post('https://api.cloudinary.com/v1_1/djgk2k4sw/image/upload',formData )
+            
+            console.log(response)
+            
+            const dataurl = response.data.url
+            
+            console.log(dataurl)
+            
+            imageurls.push(dataurl)
+            
+            
         }  
-
         
-    
-    
+        catch(error){
+            
+            console.log(error)
+        }
+        
+            let imageurls = [...hive.image]
+            setHive({ ...hive, image: imageurls})
+            setImageLoadUpload(false)
+        }
 
-    catch(error){
 
-        console.log(error)
     }
 
-}
+    const handleSubmit = async(e)=>{
+
+        e.preventDefault()
+
+        if(hive.image || !hive.image){
+            try{
+
+                if(!hive.name || !hive.price || !hive.size){
+
+                    alert('All fields are required mate!')
+                }
+
+                setLoading(true)
+
+                const {data} = await Axios.post('http://localhost:3003/api/auth/hives', hive)
+
+                console.log(data)
+
+                setLoading(false)
+
+                alert('Uploaded Successfully!')
+
+                setHive({
+                    name:" ",
+                    price:" ",
+                    size:" ",
+                    image:" "
+                })
+            }
+
+
+            catch(error){
+
+                setLoading(false)
+
+            }
+
+        }
+        else{
+            alert('image is required.')
+        }
+
+
+
+    }
 
 
 
@@ -109,16 +183,14 @@ function Dashboard(){
                             name="image"
                             id="image"
                             placeholder="Upload the image of the Hive"
-                            onChange={(e)=>{
-                                setImage(e.target.files[0])
-                            }}
+                            onChange={uploadImage }
                             />
 
                         </div>
 
                         <div className="form-footer">
 
-                            <button type="submit" onClick={uploadImage}>Upload</button>
+                            <button type="submit" onClick={handleSubmit} disabled ={imageloadupload || loading} >{loading? 'Loading...':imageloadupload? 'uploading...': "send"}</button>
                      
                         </div>
 
