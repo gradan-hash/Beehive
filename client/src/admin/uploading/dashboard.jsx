@@ -1,9 +1,47 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Link} from 'react-router-dom';
 import Navbar from '../components/navbar'
 import './dashboard.css'
+import Axios from 'axios'
 
 function Dashboard(){
+
+
+    const [image, setImage] = useState('')
+
+    
+        
+        const uploadImage =()=>{
+
+        try{
+    
+            const formData = new FormData()
+            formData.append('file', image)
+            formData.append('upload_preset', 'tm4havmt')
+
+            // console.log(files[0])
+    
+            Axios.post('https://api.cloudinary.com/v1_1/djgk2k4sw/image/upload', formData).then((response)=>{
+                console.log(response)
+            })
+        
+    
+
+        }  
+
+        
+    
+    
+
+    catch(error){
+
+        console.log(error)
+    }
+
+}
+
+
+
 
 
     return(
@@ -19,7 +57,7 @@ function Dashboard(){
 
                     <p className='title'>Upload BeeHive Details</p>
 
-                    <form>
+                    {/* <form> */}
 
                         <div className="upload">
 
@@ -71,14 +109,16 @@ function Dashboard(){
                             name="image"
                             id="image"
                             placeholder="Upload the image of the Hive"
-
+                            onChange={(e)=>{
+                                setImage(e.target.files[0])
+                            }}
                             />
 
                         </div>
 
                         <div className="form-footer">
 
-                            <button type="submit">Upload</button>
+                            <button type="submit" onClick={uploadImage}>Upload</button>
                      
                         </div>
 
@@ -86,23 +126,9 @@ function Dashboard(){
 
 
 
-                    </form>
-
-
-
-
-
-
-
+                    {/* </form> */}
 
                 </main>
-
-
-
-
-
-
-
 
              </section>
 
