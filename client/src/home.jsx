@@ -1,51 +1,19 @@
-import React from 'react'
-import About from './about'
-import Footer from './components/footer'
-import Navbar from './components/navbar'
-
+import React from "react";
+import About from "./about";
+import Footer from "./components/footer";
+import Navbar from "./components/navbar";
+import Products from "./components/products/Products";
 
 function Home() {
   return (
-
-
     <>
- <Navbar/>
-      <div className="mainhome" id ="home">
-     
+      <Navbar />
+      <Products />
+      <About />
 
-          <div>home</div>
-          <div>home</div>
-          <div>home</div>
-          <div>home</div>
-          <div>home</div>
-          <div>home</div>
-          <div>home</div>
-          <div>home</div>
-          <div>home</div>
-          <div>home</div>
-          <div>home</div>
-          <div>home</div>
-          <div>home</div>
-          <div>home</div>
-          <div>home</div>
-          <div>home</div>
-          <div>home</div>
-          <div>home</div>
-          <div>home</div>
-          <div>home</div>
-          <div>home</div>
-          
-          <div>home</div>
-          <div>home</div>
-
-        </div>
-
-        <About/>
-        <Footer/>
-
-
+      <Footer />
     </>
-  )
+  );
 }
 
-export default Home
+export default Home;
