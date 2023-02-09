@@ -92,7 +92,7 @@ const Single = () => {
                       type="button"
                       className="btn"
                       onClick={handlesubmit}>
-                      BOOK
+                      ENQUIRE
                     </button>
                   </div>
                 </ul>
