@@ -74,9 +74,7 @@ function Navbar() {
         <button className="nav-btn" onClick={shownavbar}>
           <FaBars />
         </button>
-        <div className="admin">
-          <h2>checkItems</h2>
-        </div>
+        
       </header>
     </>
   );
