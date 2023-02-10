@@ -188,3 +188,11 @@ header .nav-btn{
 
 
 }
+.admin{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-size: 14px;
+    padding-top: 30px;
+
+}

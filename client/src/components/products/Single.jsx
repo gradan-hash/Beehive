@@ -74,8 +74,7 @@ const Single = () => {
                   <li className="feature">
                     <h1>Cost</h1>
                     <div className="flex">
-                      <h1 className="facility-name">Ksh</h1>
-                      <div className="facility-value">{products.price}</div>
+                      <h1 className="facility-name">ksh:{products.price}</h1>
                     </div>
                   </li>
 
