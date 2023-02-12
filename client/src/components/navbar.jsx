@@ -78,7 +78,7 @@ function Navbar() {
             offset={50}
             duration={500}>
             Contact
-          </Link>
+          </Link><br></br>
           <RouterLink to="/login" style={{ textDecoration: "none" }}>
             login
           </RouterLink>

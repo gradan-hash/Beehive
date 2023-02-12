@@ -21,7 +21,7 @@ function Login() {
     e.preventDefault();
 
     try {
-      if (email === "admin@gmail.com" && password === "admin") {
+      if (email === "Waphilo7@gmail.com" && password === "admin") {
         window.open("/admin", "_blank");
       } else {
         setError("Invalid email or password. Please try again.");

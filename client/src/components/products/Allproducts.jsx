@@ -9,6 +9,8 @@ import Footer from "../footer";
 const AllProducts = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [productsPerPage] = useState(18);
 
   const getAllProducts = async () => {
     try {
@@ -30,6 +32,17 @@ const AllProducts = () => {
     getAllProducts();
   }, []);
 
+  const indexOfLastProduct = currentPage * productsPerPage;
+  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+  const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+  const pageNumbers = [];
+  for (let i = 1; i <= Math.ceil(products.length / productsPerPage); i++) {
+    pageNumbers.push(i);
+  }
+
   return (
     <>
       <Navbar />
@@ -42,7 +55,7 @@ const AllProducts = () => {
           {loading ? (
             <p>loading ...</p>
           ) : (
-            products.map((item) => (
+            currentProducts.map((item) => (
               <div className="productssitems" key={item._id}>
                 <div className="img">
                   <img src={item.image} alt={item.name} />
@@ -60,10 +73,19 @@ const AllProducts = () => {
             ))
           )}
         </div>
-      </div>
-      <Footer />
-    </>
-  );
-};
-
+        <div className="pagination">
+          {pageNumbers.map((number) => (
+            <span
+              key={number}
+              className={currentPage === number ? "active" : ""}
+              onClick={() => paginate(number)} >
+              {number}
+            </span>
+          ))}
+</div>
+</div>
+<Footer/>
+</>
+)
+}
 export default AllProducts;

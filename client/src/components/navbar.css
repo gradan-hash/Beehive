@@ -33,8 +33,6 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-
-
 }
 
 .flip-box {
@@ -123,6 +121,38 @@ header .nav-btn {
   justify-content: center;
   margin-left: 60px;
 }
+@media only screen and (max-width: 360px) {
+  .navref {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: auto;
+    width: 25vh;
+    height: 50vh;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .navref {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: auto;
+    width: 25vh;
+    height: 50vh;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .navref {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: auto;
+    width: 25vh;
+    height: 50vh;
+  }
+}
+
 /* will take effect on screens that have smaller screen than 1024px */
 
 @media only screen and (max-width: 1024px) {
