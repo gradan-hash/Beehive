@@ -115,20 +115,24 @@ header .nav-btn {
   opacity: 0;
   font-size: 1.8rem;
 }
+
 .navref {
   display: flex;
   flex-direction: row;
   justify-content: center;
   margin-left: 60px;
 }
+
 @media only screen and (max-width: 360px) {
   .navref {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-left: auto;
-    width: 25vh;
-    height: 50vh;
+    /* width: 25vh; */
+    width: 100%;
+    height: max-content;
+    /* height: 50vh; */
   }
 }
 
@@ -136,29 +140,35 @@ header .nav-btn {
   .navref {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
+    align-items: flex-start;
     margin-left: auto;
-    width: 25vh;
-    height: 50vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* width: 25vh; */
+    width: 100%;
+    /* height: 50vh; */
+    height: max-content;
+    padding-top: 150px;
+    padding-bottom: 10px;
+    padding-left: 20px;
   }
-}
-@media only screen and (max-width: 1024px) {
-  .navref {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: auto;
-    width: 25vh;
-    height: 50vh;
+  .navref a {
+    margin: 10px 0 !important;
   }
-}
+  .nav-btn {
+    z-index: 10;
+    width: max-content !important;
+  }
+  .flip-box {
+    z-index: 10;
+  }
 
-/* will take effect on screens that have smaller screen than 1024px */
-
-@media only screen and (max-width: 1024px) {
   header .nav-btn {
     visibility: visible;
     opacity: 1;
+    display: block;
   }
 
   header nav {
@@ -171,6 +181,7 @@ header .nav-btn {
     flex-direction: column;
     align-items: center;
     /* centers all the links */
+
     justify-content: center;
     background-color: var(--maincolor);
     transition: 1s;
@@ -191,3 +202,60 @@ header .nav-btn {
     font-size: 1.5rem;
   }
 }
+
+/*
+@media only screen and (max-width: 1024px) {
+  .navref {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: auto;
+    /* width: 25vh; */
+/*width: 100%;
+
+    /* height: 50vh; */ /*
+    height: max-content;
+  }
+}
+*/
+
+/* will take effect on screens that have smaller screen than 1024px */
+/*
+@media only screen and (max-width: 1024px) {
+  header .nav-btn {
+    visibility: visible;
+    opacity: 1;
+    display: block;
+  }
+
+  header nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* centers all the links */
+
+/* justify-content: center;
+    background-color: var(--maincolor);
+    transition: 1s;
+    transform: translateY(-100vh);
+  } */
+
+/* header .responsive_nav {
+    transform: none;
+  }
+
+  nav .nav-close-btn {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+  }
+
+  nav .a {
+    font-size: 1.5rem;
+  }
+} */

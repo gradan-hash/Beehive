@@ -50,18 +50,26 @@
 }
 
 .whatsapp {
-  font-size: 17px;
+  font-size: 20px;
   font-weight: 500;
-  height: 5rem;
-  width: 6rem;
+  /* height: 5rem; */
+  /* width: 6rem; */
   border-radius: 6rem;
   cursor: pointer;
+  color:black;
   transition: background-color 1s ease-in-out 1.5ms;
+  float: none!important;
+  width: max-content!important;
 }
 
-.whatsapp:hover {
+/* .whatsapp svg{
+  color:#25d366;
+
+} */
+
+/* .whatsapp :hover {
   background-color: #ffc72b;
-}
+} */
 
 @media only screen and (max-width: 360px) {
   .contact .reach {

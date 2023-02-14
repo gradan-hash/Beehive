@@ -27,7 +27,8 @@ function Footer() {
             <ReactWhatsapp
               number="+254721781532"
               className="whatsapp"
-              message="Hello, Inquiry of Bee-hive!">
+              message="Hello, Inquiry of Bee-hive!"
+            >
               <p>
                 <FaWhatsapp /> Whatsapp
               </p>

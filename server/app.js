@@ -9,7 +9,7 @@ const cors = require('cors')
 const xss = require('xss-clean')
 const ratelimit = require('express-rate-limit')
 const BeehiveRoute = require('./routes/upload')
-
+// const path = require('path')
 
 
 // app.set('trust proxy', 1)
@@ -17,6 +17,14 @@ const BeehiveRoute = require('./routes/upload')
 //     windowMs: 15 * 60 * 1000,
 //     max:100
 // }))
+
+
+// const buildpath = path.resolve(__dirname, '../client/build')
+// app.use(express.static(buildpath))
+
+// app.get("*", (req, res) => {
+//     res.sendFile(path.join(buildPath, "index.html"));
+//   });
 
 
 app.use(xss())
